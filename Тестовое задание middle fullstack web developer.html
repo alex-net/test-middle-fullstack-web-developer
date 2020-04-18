@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0834)https://mail-attachment.googleusercontent.com/attachment/u/0/?view=att&th=1715f15b2cbcd45f&attid=0.1&disp=inline&safe=1&zw&saddbat=ANGjdJ-K9K3KWPSxzTZmBFH0GLcpiM5ePOws4Ot8v8m5N0SgsS_4p3gqahzQQLmQSIbLOyuYRIC_FvaWhuPeHpAC_okGK70aysMItzsR7FKuPv5RmHzLLiYVRCVELEizRCFu_3-JmpJCMZJ9FQj7sL7wgLO0SQJe0Fc53beiEZ2AX-NbagseTezr4NdHNA-uVPx1NiDZ9CvA9zaTQZ90G54XIMsR3-zeG1lJLsXE1z0R8RUTuw9vBNC0gqAgiItnkbMAt1QOrxTUotZlL-t6fND3HEvEirg6BhHlxPAWptq1JFNtILOL4c5LpzVcTVqoIh7Cx7Ont4L5ajLx3FutBy1oTzHCvT_4Uw3PFueuvxuA1qxFJUVNFA1np2-hyNfQ77HSl7rnIQyGEAIJiOt0wwtEG2SXfzl6e91XxN84g_UDEdNn7GkcKFMw08L7tOhPMzFvQ7krWzxN6rQmBtrAAyJ5bmWZxGW8eb8wByb94XomchoRzw2RUrx6XWH0tOFUvXKya3qHkw149tF0xOUwlgcTf976lOUsHP2hMhgi7uM71gKK4qmiwY0IqWuh_T2pf-eh3D9K4AaoEAsLgOYPevwG4Tiyyr3FiMRWZ6pbs6iRoc-H0kuRcpcWJGu6lVnRMiLwWosRG3ZQEKFZUZkGEHaWJnqd5BoDs614ERDEdGkKdRAyaLvfM-zHEDMxpo4 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body cz-shortcut-listen="true">
+
+
+    
+    
+
+<div>
+<h4>1 Задание, Составить SQL запрос</h4>
+
+<p>
+    Таблицу test заполнили последовательными целыми положительными числами (от 1 до n), а затем некоторые
+    из них удалили случайным образом. Необходимо написать SQL-запрос, который выводил
+    бы интервалы, в которых недостает чисел.
+</p>
+
+<pre>    CREATE TABLE test (
+      id INT NOT NULL PRIMARY KEY
+    );
+
+    INSERT INTO test (id) VALUES (1), (2), (3), (6), (8), (9), (12);
+</pre>
+
+<p>Результат должен быть таким:</p>
+
+<pre>    FROM | TO
+    3    | 6
+    6    | 8
+    9    | 12
+</pre>
+
+<h4>2 Задание, Составить SQL запрос</h4>
+
+<p>
+    Даны 3 таблицы <br><br>
+
+    <i>users (id, name, email)</i><br>
+    <i>products (id, name, price)</i><br>
+    <i>orders (id, id_user, id_product, create_at(Timestamp))</i><br>
+
+    <br>
+
+    Юзер (users) купил 4 товара (products) и в таблицу orders попали 4 записи.<br>
+    Напишите 1 sql запрос:<br>
+    Вывести сумму всех заказов пользователя за каждый день, если известен только email покупателя.
+</p>
+
+<h4>3 Задание</h4>
+
+<p>
+    Реализовать на Vue с необходимыми компонентами для реализации табов с указанной ниже
+    разметкой использования. И содержимое, и заголовок должны поддерживать отображение других
+    компонентов/произвольного html. По умолчанию активен первый таб. Должна поддерживаться возможность
+    динамически добавить/убрать таб (v-for или v-if как в разметке ниже). При удалении таба, если тот
+    был активным, активным становится первый таб (если остался хотя бы один). В решении вывести
+    разметку ниже для проверки выполнения задания. Верстка: список заголовков табов в одну строку
+    и активный контент под ними, заголовок активного таба должен быть выделен произвольным способом.
+    <br>
+    <br>
+    <b>Bonus:</b> Сделать так, чтобы содержимое табов инициализировалось только при активации таба.
+    Допускается изменение разметки.
+</p>
+
+<textarea style="width:100%;height:500px;border:none" readonly="">    &lt;button @click="visible = !visible"&gt;
+        Toggle 3 tab
+    &lt;/button&gt;
+
+    &lt;tabs&gt;
+        &lt;tab&gt;
+            &lt;tab-title&gt;
+                Title 1
+            &lt;/tab-title&gt;
+            &lt;tab-content&gt;
+                &lt;i&gt;Content&lt;/i&gt; 1
+            &lt;/tab-content&gt;
+        &lt;/tab&gt;
+        &lt;tab&gt;
+            &lt;tab-title&gt;
+                &lt;i&gt;Title&lt;/i&gt; 2
+            &lt;/tab-title&gt;
+            &lt;tab-content&gt;
+                Content 2
+            &lt;/tab-content&gt;
+        &lt;/tab&gt;
+        &lt;tab v-if="visible"&gt;
+            &lt;tab-title&gt;
+                Title 3
+            &lt;/tab-title&gt;
+            &lt;tab-content&gt;
+                Content 3
+            &lt;/tab-content&gt;
+        &lt;/tab&gt;
+    &lt;/tabs&gt;
+</textarea>
+
+<h4>4 Задание</h4>
+
+<p>Написать функцию, которая будет принимать 3 параметра</p>
+
+<ol>
+   <li>Любой вложенности массив (array) = $datas</li>
+   <li>Что ищем (string) = $key</li>
+   <li>На что заменяем (string) = $value</li>
+</ol>
+
+<p>
+    На выходе мы должны получить массив $datas в котором заменены все элементы (ключи, значения) $key на $value.
+    Будет + если решите задачу без использования циклов.
+</p>
+
+<p>Например:</p>
+
+<pre>    $datas = [
+        'aasd' =&gt; 'bbsr',
+        'aas' =&gt; [
+            'zzc' =&gt; 'ffts'
+        ]
+    ];
+
+    $key = 's';
+    $value = '%SUPER%';
+
+    $datas = str_replace_array($datas, $key, $value);
+
+    print_r($datas);
+
+    &lt;&lt;&lt; Результат:
+
+    (array) [
+        'aa%SUPER%d' =&gt; 'bb%SUPER%r',
+        'aa%SUPER%' =&gt; [
+            'zzc' =&gt; 'fft%SUPER%'
+        ]
+    ];
+</pre>
+
+
+</div></body></html>

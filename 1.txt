@@ -1,0 +1,19 @@
+1 Задание, Составить SQL запрос
+Таблицу test заполнили последовательными целыми положительными числами (от 1 до n), а затем некоторые из них удалили случайным образом. Необходимо написать SQL-запрос, который выводил бы интервалы, в которых недостает чисел.
+
+    CREATE TABLE test (
+      id INT NOT NULL PRIMARY KEY
+    );
+
+    INSERT INTO test (id) VALUES (1), (2), (3), (6), (8), (9), (12);
+Результат должен быть таким:
+
+    FROM | TO
+    3    | 6
+    6    | 8
+    9    | 12
+
+
+Текст запроса 
+select * from (select id as `from`, lead(id) over (order by id asc ) as `to`  from test) t where t.to-t.from>1
+

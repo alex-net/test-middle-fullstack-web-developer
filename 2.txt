@@ -1,0 +1,17 @@
+-- 2 Задание, Составить SQL запрос
+-- Даны 3 таблицы
+
+-- users (id, name, email)
+-- products (id, name, price)
+-- orders (id, id_user, id_product, create_at(Timestamp))
+
+-- Юзер (users) купил 4 товара (products) и в таблицу orders попали 4 записи.
+-- Напишите 1 sql запрос:
+-- Вывести сумму всех заказов пользователя за каждый день, если известен только email покупателя.
+
+-- пусть ящик юзеря, для которого надо посчитать зуммы заказов, будет mail@example.com, тогда запрос будет выглядеть так 
+
+select date(o.create_at) as `date` sum(p.price) as summa from orders o left join products p on  p.id=o.id_product left join users u on u.id=o.id_user where u.email='mail@example.com' group by date(o.create_at)
+
+
+
